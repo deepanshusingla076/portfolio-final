@@ -31,11 +31,13 @@ export default function GalaxyBackground() {
     let animId;
 
     const isLight = theme === 'light';
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
 
     let W = window.innerWidth;
     let H = window.innerHeight;
-    canvas.width = W;
-    canvas.height = H;
+    canvas.width = Math.floor(W * pixelRatio);
+    canvas.height = Math.floor(H * pixelRatio);
+    ctx.scale(pixelRatio, pixelRatio);
 
     // Max 12 very slow, very dim particles
     const count = Math.min(12, Math.floor((W * H) / 100000));
@@ -71,11 +73,12 @@ export default function GalaxyBackground() {
     }
 
     let lastTime = 0;
+    let lastScrollTime = -Infinity;
     const interval = 1000 / 12; // 12 FPS cap
 
     function loop(ts) {
       animId = requestAnimationFrame(loop);
-      if (ts - lastTime < interval) return;
+      if (ts - lastTime < interval || ts - lastScrollTime < 140) return;
       lastTime = ts;
       draw();
     }
@@ -85,14 +88,20 @@ export default function GalaxyBackground() {
     const onResize = () => {
       W = window.innerWidth;
       H = window.innerHeight;
-      canvas.width = W;
-      canvas.height = H;
+      canvas.width = Math.floor(W * pixelRatio);
+      canvas.height = Math.floor(H * pixelRatio);
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       for (const p of particles) {
         if (p.x > W) p.x = Math.random() * W;
         if (p.y > H) p.y = Math.random() * H;
       }
     };
     window.addEventListener('resize', onResize, { passive: true });
+
+    const onScroll = () => {
+      lastScrollTime = performance.now();
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     const onVisibility = () => {
       if (document.hidden) cancelAnimationFrame(animId);
@@ -103,6 +112,7 @@ export default function GalaxyBackground() {
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', onScroll);
       document.removeEventListener('visibilitychange', onVisibility);
     };
   }, [theme, isSupported]);

@@ -84,6 +84,7 @@ h6 {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
   scroll-padding-top: calc(var(--nav-h) + 16px);
 }
 
@@ -100,6 +101,12 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body::before {

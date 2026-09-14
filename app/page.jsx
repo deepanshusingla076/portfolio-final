@@ -1,6 +1,5 @@
 ﻿'use client';
 
-import SplashCursor from './components/SplashCursor';
 import Navigation from './components/Navigation';
 import GalaxyBackground from './components/GalaxyBackground';
 import Hero from './components/Hero';
@@ -19,16 +18,6 @@ export default function Page() {
   return (
     <>
       <GalaxyBackground />
-      <SplashCursor
-        SIM_RESOLUTION={32}
-        DYE_RESOLUTION={128}
-        CAPTURE_RESOLUTION={64}
-        DENSITY_DISSIPATION={8}
-        VELOCITY_DISSIPATION={4}
-        PRESSURE_ITERATIONS={4}
-        SPLAT_RADIUS={0.12}
-        SPLAT_FORCE={3000}
-      />
       <Navigation />
       <main>
         <Hero />
