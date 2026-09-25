@@ -13,7 +13,7 @@ const ROLES = [
 ];
 
 const STATS = [
-  { num: '9.06', label: 'CGPA' },
+  { num: '9.13', label: 'CGPA' },
   { num: '5+', label: 'Projects' },
   { num: '2', label: 'Internships' },
   { num: '5+', label: 'Hackathons' },
@@ -148,7 +148,7 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p className="hero-desc" variants={item}>
-           I enjoy building modern web applications, real-time platforms, scalable backends, and production-ready APIs. I am a 3rd year B.E. CSE student at Chitkara University focused on clean architecture and practical system design.
+           I enjoy building modern web applications, real-time platforms, scalable backends, and production-ready APIs. I am a 4th year B.E. CSE student at Chitkara University focused on clean architecture and practical system design.
           </motion.p>
 
           {/* CTAs */}
@@ -183,7 +183,7 @@ export default function Hero() {
               <span className="hcb-line">
                 <span className="hcb-k">const</span>{' '}
                 <span className="hcb-v">cgpa</span>{' = '}
-                <span className="hcb-n">9.06</span>;
+                <span className="hcb-n">9.13</span>;
               </span>
             </motion.div>
 

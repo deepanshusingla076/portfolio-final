@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 
 const WORDS = [
   'React', 'Node.js', 'TypeScript', 'Python', 'Java',
-  'MongoDB', 'Docker', 'Next.js', 'Express', 'PostgreSQL',
+  'MongoDB', 'Docker', 'Next.js', 'Express',
   'Spring Boot', 'AWS', 'Redux', 'Microservices',
 ];
 

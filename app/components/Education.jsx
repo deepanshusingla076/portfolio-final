@@ -10,12 +10,12 @@ const courses = [
   "System Design",
 ];
 
-const CGPA = 9.06;
+const CGPA = 9.13;
 const CIRCUMFERENCE = 2 * Math.PI * 24; 
 
 export default function Education() {
   const cgpaPercent = (CGPA / 10) * 100;
-  const semesterProgress = (6 / 8) * 100;
+  const semesterProgress = (7 / 8) * 100;
 
   return (
     <section id="education" className="section" style={{ paddingTop: 0 }}>
@@ -49,7 +49,7 @@ export default function Education() {
               <div className="edu-timeline">
                 <div className="edu-timeline-header">
                   <span className="edu-timeline-label">Academic Progress</span>
-                  <span className="edu-timeline-value">Sem 6 / 8</span>
+                  <span className="edu-timeline-value">Sem 7 / 8</span>
                 </div>
                 <div className="edu-progress-bar">
                   <div
@@ -89,7 +89,7 @@ export default function Education() {
                 {/* Semester */}
                 <div className="edu-stat-box">
                   <span className="edu-stat-num">
-                    6<span className="edu-stat-small">th</span>
+                    7<span className="edu-stat-small">th</span>
                   </span>
                   <span className="edu-stat-name">Semester</span>
                 </div>

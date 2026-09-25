@@ -29,7 +29,7 @@ export default function About() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <motion.p variants={fadeUp}>
-              I&apos;m <strong>Deepanshu Singla</strong>, a third-year Computer Science student at Chitkara University (CGPA: 9.06/10), focused on building scalable, production-grade applications.
+              I&apos;m <strong>Deepanshu Singla</strong>, a fourth-year Computer Science student at Chitkara University (CGPA: 9.13/10), focused on building scalable, production-grade applications.
             </motion.p>
             <motion.p variants={fadeUp}>
               I specialize in backend and full-stack development, designing real-time and data-driven systems using Node.js, Spring Boot, FastAPI, Redis, and Socket.io, with a strong emphasis on performance, reliability, and clean architecture.

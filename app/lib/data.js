@@ -123,7 +123,7 @@ export const SKILLS = {
     "Socket.IO",
     "JWT",
   ],
-  Databases: ["MongoDB", "PostgreSQL", "MySQL", "Firebase", "Redis", "SQL"],
+  Databases: ["MongoDB", "MySQL", "Firebase", "Redis", "SQL"],
   "Cloud & DevOps": [
     "AWS (EC2, S3, IAM)",
     "Docker",
